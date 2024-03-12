@@ -19,9 +19,30 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push Docker image
+      - name: Build and push worker image
         uses: docker/build-push-action@v4
         with:
           context: worker
+          push: true
+          tags: fuad1993/docker-hub-test:latest
+
+      - name: Build and push client image
+        uses: docker/build-push-action@v4
+        with:
+          context: client
+          push: true
+          tags: fuad1993/docker-hub-test:latest
+
+      - name: Build and push server image
+        uses: docker/build-push-action@v4
+        with:
+          context: server
+          push: true
+          tags: fuad1993/docker-hub-test:latest
+
+      - name: Build and push nginx image
+        uses: docker/build-push-action@v4
+        with:
+          context: nginx
           push: true
           tags: fuad1993/docker-hub-test:latest
