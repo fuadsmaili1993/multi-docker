@@ -24,4 +24,5 @@ jobs:
           context: ./worker
           file: ./Dockerfile
           push: true
-          tags: fuad1993/docker-hub-test:latest
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
