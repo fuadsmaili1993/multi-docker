@@ -22,7 +22,6 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: ./worker
-          file: ./Dockerfile
+          context: worker
           push: true
           tags: fuad1993/docker-hub-test:latest
