@@ -24,25 +24,25 @@ jobs:
         with:
           context: worker
           push: true
-          tags: fuad1993/docker-hub-test:latest
+          tags: fuad1993/worker:latest
 
       - name: Build and push client image
         uses: docker/build-push-action@v4
         with:
           context: client
           push: true
-          tags: fuad1993/docker-hub-test:latest
+          tags: fuad1993/client:latest
 
       - name: Build and push server image
         uses: docker/build-push-action@v4
         with:
           context: server
           push: true
-          tags: fuad1993/docker-hub-test:latest
+          tags: fuad1993/server:latest
 
       - name: Build and push nginx image
         uses: docker/build-push-action@v4
         with:
           context: nginx
           push: true
-          tags: fuad1993/docker-hub-test:latest
+          tags: fuad1993/nginx:latest
